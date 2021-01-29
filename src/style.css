@@ -1,0 +1,150 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Red Hat Text", sans-serif;
+}
+
+p {
+  font-family: "Red Hat Text", sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 33vh 24vh 43vh;
+  grid-template-columns: 1fr repeat(4, 10rem) 1fr;
+  column-gap: 1.5rem;
+  background-color: #281f31;
+}
+
+.stars {
+  z-index: -1;
+  grid-column: 1/7;
+  grid-row: 1/4;
+  fill: white;
+}
+
+.hill {
+  grid-column: 1/-1;
+  grid-row: 3/4;
+  align-self: end;
+}
+
+.announcements {
+  grid-column: 2/6;
+  grid-row: 1/2;
+  align-self: center;
+  justify-self: center;
+}
+.announcements h1 {
+  color: white;
+  letter-spacing: 5px;
+}
+
+.time {
+  display: grid;
+  grid-template-rows: repeat(2, 37%) 26%;
+  grid-template-columns: 1fr;
+  perspective: 600px;
+}
+.time > p {
+  color: #8486a9;
+  letter-spacing: 5px;
+  justify-self: center;
+  align-self: end;
+}
+
+.slide {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #2c2e44;
+  overflow: hidden;
+  transform-origin: bottom;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+.slide > p {
+  position: absolute;
+  backface-visibility: hidden;
+  color: #fb517b;
+  font-size: 5.5rem;
+  font-family: "Red Hat Text", sans-serif;
+  bottom: -30px;
+  line-height: 0.7;
+}
+.slide > p:last-child {
+  transform: rotateY(180deg);
+}
+.slide:hover {
+  transform: rotateX(-180deg);
+}
+
+.slideb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 10px #1e1f29;
+  background-color: #343650;
+  overflow: hidden;
+  position: relative;
+}
+.slideb p {
+  position: absolute;
+  color: #fb6087;
+  top: -32px;
+  line-height: 0.7;
+  font-size: 5.5rem;
+  font-family: "Red Hat Text", sans-serif;
+}
+
+.days {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.days > p {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+.hours {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+.hours > p {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+.minutes {
+  grid-column: 4/5;
+  grid-row: 2/3;
+}
+.minutes > p {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+.seconds {
+  grid-column: 5/6;
+  grid-row: 2/3;
+}
+.seconds > p {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+/*# sourceMappingURL=style.css.map */

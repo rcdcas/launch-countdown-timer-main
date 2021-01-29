@@ -1,0 +1,11 @@
+@use './var';
+
+h1 {
+  font-family: var.$font;
+  // color: var.$color-3;
+}
+
+p {
+  font-family: var.$font;
+  // color: var.$color-2;
+}

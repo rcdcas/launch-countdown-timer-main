@@ -1,0 +1,37 @@
+@use 'var';
+
+body {
+  display: grid;
+  grid-template-rows: 33vh 24vh 43vh;
+  grid-template-columns: 1fr repeat(4, 10rem) 1fr;
+  column-gap: 1.5rem;
+  // column-gap: 1rem;
+
+  background-color: #281f31;
+  // margin: 1.5rem;
+}
+
+.stars {
+  z-index: -1;
+  grid-column: 1 / 7;
+  grid-row: 1 / 4;
+  fill: white;
+}
+.hill {
+  // width: 2000px;
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
+  align-self: end;
+
+  // justify-self: stretch;
+}
+.announcements {
+  grid-column: 2 / 6;
+  grid-row: 1 / 2;
+  align-self: center;
+  justify-self: center;
+  h1 {
+    color: var.$white;
+    letter-spacing: 5px;
+  }
+}
