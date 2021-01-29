@@ -43,7 +43,7 @@
   transform-style: preserve-3d;
   & > p {
     position: absolute;
-    backface-visibility: hidden;
+    // backface-visibility: hidden;
     // height: 100%;
     // display: inline;
     // position: absolute;
@@ -62,7 +62,7 @@
     // vertical-align: middle;
   }
   & > p:last-child {
-    transform: rotateY(180deg);
+    // transform: rotateY(180deg);
   }
 
   &:hover {

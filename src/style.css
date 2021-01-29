@@ -78,15 +78,11 @@ body {
 }
 .slide > p {
   position: absolute;
-  backface-visibility: hidden;
   color: #fb517b;
   font-size: 5.5rem;
   font-family: "Red Hat Text", sans-serif;
   bottom: -30px;
   line-height: 0.7;
-}
-.slide > p:last-child {
-  transform: rotateY(180deg);
 }
 .slide:hover {
   transform: rotateX(-180deg);
