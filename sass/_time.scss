@@ -19,6 +19,10 @@
     letter-spacing: 5px;
     justify-self: center;
     align-self: end;
+    @media only screen and (max-width: 500px) {
+      font-size: 0.5rem;
+      letter-spacing: 2px;
+    }
   }
   @media only screen and (max-width: 500px) {
     grid-template-columns: 4.5rem;
