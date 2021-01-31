@@ -13,92 +13,152 @@
   //   border-radius: 10px;
   //   box-shadow: 0 10px var.$very-dark-blue;
   // }
-  perspective: 600px;
+  perspective: 300px;
   & > p {
     color: var.$grayish-blue;
     letter-spacing: 5px;
     justify-self: center;
     align-self: end;
   }
+  @media only screen and (max-width: 500px) {
+    grid-template-columns: 4.5rem;
+  }
 }
 
 .slide {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  // z-index: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var.$dark-desaturated-blue2;
+  overflow: hidden;
+
+  & > p {
+    position: absolute;
+    color: var.$soft-red2;
+    font-size: 5.5rem;
+    font-family: var.$font;
+    bottom: -30px;
+    line-height: 0.7;
+  }
+}
+
+.slide--active {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
   z-index: 1;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  // align-content: center;
   border-radius: 10px;
 
-  // box-shadow: 0 10px var.$very-dark-blue;
   background-color: var.$dark-desaturated-blue2;
   overflow: hidden;
-  // position: relative;
-  // perspective: 100px;
-  // perspective-origin: top;
-  // transform: rotateY(45deg);
+  backface-visibility: hidden;
   transform-origin: bottom;
-  transition: transform 1s;
-  transform-style: preserve-3d;
+  // transition: transform 1s;
+  // transform-style: preserve-3d;
   & > p {
     position: absolute;
-    // backface-visibility: hidden;
-    // height: 100%;
-    // display: inline;
-    // position: absolute;
     color: var.$soft-red2;
-    // background: -webkit-linear-gradient(var.$soft-red2 50%, var.$soft-red 50%);
-    // -webkit-background-clip: text;
-    // -webkit-text-fill-color: transparent;
-    // color: var.$soft-red;
     font-size: 5.5rem;
     font-family: var.$font;
     bottom: -30px;
     line-height: 0.7;
-    // transform: translateY(50%);
+  }
+}
+.slide--active-click {
+  transition: transform 500ms;
+  transform: rotateX(-180deg) translateY(2px);
+}
 
-    // text-align: center;
-    // vertical-align: middle;
+.slide--active-back {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  z-index: 2;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var.$dark-desaturated-blue;
+  overflow: hidden;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  transform-origin: bottom;
+  // transition: transform 1s;
+  // transform-style: preserve-3d;
+  & > p {
+    position: absolute;
+    color: var.$soft-red;
+    font-size: 5.5rem;
+    font-family: var.$font;
+    bottom: -31px;
+    line-height: 0.7;
+    transform: rotate(180deg);
   }
-  & > p:last-child {
-    // transform: rotateY(180deg);
-  }
+}
 
-  &:hover {
-    transform: rotateX(-180deg);
-  }
+.slide--active-back-click {
+  transform: rotateY(180deg) rotateX(180deg) translateY(1px);
+  transition: transform 500ms;
 }
 
 .slideb {
   display: flex;
   justify-content: center;
   align-items: center;
-  // align-content: center;
   border-radius: 10px;
   box-shadow: 0 10px var.$very-dark-blue;
   background-color: var.$dark-desaturated-blue3;
   overflow: hidden;
   position: relative;
-  p {
-    // height: 100%;
-    // display: inline;
+  & > p {
     position: absolute;
     color: var.$soft-red;
-    // background: -webkit-linear-gradient(var.$soft-red2 50%, var.$soft-red 50%);
-    // -webkit-background-clip: text;
-    // -webkit-text-fill-color: transparent;
-    // color: var.$soft-red;
     top: -32px;
     line-height: 0.7;
-    // transform: translateY(-31%);
     font-size: 5.5rem;
     font-family: var.$font;
-    // text-align: center;
-    // vertical-align: middle;
   }
 }
-
+@media only screen and (max-width: 600px) {
+  .slide,
+  .slide--active,
+  .slide--active-back {
+    & > p {
+      bottom: -20px;
+      font-size: 3.5rem;
+    }
+  }
+  .slideb {
+    & > p {
+      top: -19px;
+      font-size: 3.5rem;
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  .slide,
+  .slide--active,
+  .slide--active-back {
+    & > p {
+      bottom: -15px;
+      font-size: 2.5rem;
+    }
+  }
+  .slideb {
+    & > p {
+      top: -13px;
+      font-size: 2.5rem;
+    }
+  }
+}
 .days {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
