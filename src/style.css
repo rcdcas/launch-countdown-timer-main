@@ -51,6 +51,19 @@ body {
   align-self: end;
 }
 
+.attribution {
+  grid-column: 1/-1;
+  grid-row: 3/4;
+  align-self: end;
+  justify-self: center;
+  font-family: "Red Hat Text", sans-serif;
+  color: #8486a9;
+}
+.attribution a {
+  text-decoration: none;
+  color: #fb6087;
+}
+
 .announcements {
   grid-column: 2/6;
   grid-row: 1/2;
