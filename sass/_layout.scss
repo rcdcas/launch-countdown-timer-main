@@ -28,7 +28,7 @@ body {
   fill: white;
 }
 .hill {
-  // width: 2000px;
+  width: 100%;
   grid-column: 1 / -1;
   grid-row: 3 / 4;
   align-self: end;
@@ -42,9 +42,13 @@ body {
   justify-self: center;
   font-family: var.$font;
   color: var.$grayish-blue;
+  margin-bottom: 1rem;
   a {
     text-decoration: none;
     color: var.$soft-red;
+  }
+  @media only screen and (max-width: 500px) {
+    font-size: 0.6rem;
   }
 }
 .announcements {
@@ -61,6 +65,23 @@ body {
     }
     @media only screen and (max-width: 500px) {
       font-size: 1.5rem;
+    }
+  }
+}
+
+.media {
+  grid-row: 3 / 4;
+  grid-column: 3 / 5;
+  // justify-self: center;
+  // align-self: center;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5rem;
+  & svg {
+    fill: #8385a9;
+    cursor: pointer;
+    &:hover {
+      fill: var.$soft-red;
     }
   }
 }
